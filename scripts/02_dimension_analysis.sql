@@ -29,7 +29,7 @@ ORDER BY country;
 SELECT COUNT(DISTINCT country) AS total_countries
 FROM gold.dim_customers;
 
-/* Check for missing values in key columns */
+-- Check for missing values in key columns 
 SELECT 
     SUM(CASE WHEN country IS NULL THEN 1 ELSE 0 END) AS null_countries,
     SUM(CASE WHEN first_name IS NULL THEN 1 ELSE 0 END) AS null_first_names,
