@@ -6,9 +6,6 @@
             (yearly and monthly) using aggregation and date functions.
    ============================================================ 
 */
---======================================================================
--- change over time
--- per duration(year,month) analysis ==> (Can be done using windowing functions or subqueries or basic group by operations)
 
 -- sales per year
 
