@@ -9,7 +9,6 @@
 */
 
 
--- calculate the total sales per month 
 -- running total of sales over time
 select order_date,
 total_sales,
