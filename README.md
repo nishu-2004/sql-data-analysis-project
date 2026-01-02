@@ -150,7 +150,7 @@ This enables:
 Serves as the entry point into the analytics experience and routes users to each dashboard module.
 
 📸 Screenshot
-`![Index Page](powerbi/screenshots/index_page.png)`
+<img width="1127" height="634" alt="index_page" src="https://github.com/user-attachments/assets/42102154-6a20-4724-b590-14b8d670b34b" />
 
 ---
 
@@ -167,7 +167,7 @@ High-level executive reporting:
 * Gender-wise sales contribution
 
 📸 Screenshot
-`![KPI Dashboard](powerbi/screenshots/kpi_dashboard.png)`
+<img width="1121" height="631" alt="kpi_dashboard" src="https://github.com/user-attachments/assets/fc1c43ad-ddc1-46bf-acde-51f21db64761" />
 
 ---
 
@@ -182,7 +182,8 @@ Focuses on demographic, behavioral & spending analytics:
 * Country-wise customer distribution (map)
 
 📸 Screenshot
-`![Customer Insights](powerbi/screenshots/customer_insights.png)`
+
+<img width="1128" height="634" alt="customer_insights" src="https://github.com/user-attachments/assets/389d9a26-5db9-4922-997b-e0d9e5190e80" />
 
 ---
 
@@ -202,7 +203,7 @@ Helps identify:
 * cost-to-revenue relationships
 
 📸 Screenshot
-`![Product Performance](powerbi/screenshots/product_performance.png)`
+<img width="1130" height="641" alt="product_performance" src="https://github.com/user-attachments/assets/9d758467-74d0-46d9-b56b-5e42972c9588" />
 
 ---
 
@@ -220,7 +221,8 @@ Covers operational performance & order trends:
   * product line
 
 📸 Screenshot
-`![Sales Operations](powerbi/screenshots/sales_operations.png)`
+<img width="1122" height="631" alt="sales_operations" src="https://github.com/user-attachments/assets/26c854fd-af3f-4939-b8b7-939da84ee6cc" />
+
 
 ---
 
