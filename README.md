@@ -1,97 +1,276 @@
+# 📦 Data Warehouse & Analytics Project — SQL + Power BI
 
-# Data Warehouse & Analytics Project (Continuation)
+This project is a continuation of my earlier work on the
+👉 **[SQL Data Warehouse Project](https://github.com/nishu-2004/SQL-data-warehouse-project)**
 
-This project is a continuation of my previous work on the [SQL Data Warehouse Project](https://github.com/nishu-2004/SQL-data-warehouse-project), focusing on **advanced reporting, customer and product analytics, and segmentation**.
+The focus of this extension is on:
+
+* advanced reporting
+* customer & product analytics
+* segmentation & behavioral insights
+* interactive dashboards in Power BI
+
+The solution follows a **modern data-warehouse workflow**:
+
+> ETL → Fact & Dimension Modeling → Gold Views → Analytics Reports → Dashboards
+
+---
 
 ## 📂 Repository Structure
 
 ```
-
 .
-├── docs/                   # Contains the diagram of the flow of my project
-├── scripts/                # SQL scripts for data warehouse, reports, and analytics          
-├── powerbi/                # Power BI reports (to be developed)
+├── docs/                     # Architecture & workflow diagrams
+├── scripts/                  # SQL scripts for warehouse, reporting & analytics
+├── powerbi/
+│   ├── dashboards/           # Power BI .pbix files (to be added later)
+│   └── screenshots/          # Exported dashboard images
 └── README.md
-
 ```
 
 ---
 
 ## 🏗️ Project Overview
 
-This project extends the **SQL data warehouse** from the previous repository to provide more **insights and actionable analytics** for both products and customers.
+This project builds on top of the SQL data warehouse and extends it into:
 
-**Key Objectives:**
+* customer-level analytics
+* product-level analytics
+* segmentation logic
+* time-series reporting
+* business intelligence dashboards
 
-1. Consolidate essential fields such as product name, category, subcategory, and cost.
-2. Segment products by revenue and cost:
-   - Low / Mid / Top performers
-   - Bottom 30% / 30-70% / Above 70% cost ranges
-3. Generate product-level metrics:
-   - Total orders, total sales, total quantity, total customers, lifespan, recency
-   - Average order revenue, average monthly revenue
-4. Generate customer-level metrics:
-   - Total orders, total sales, total quantity, total products, lifespan, recency
-   - Segmentation based on spending behavior: Important, Regular, New
-   - Age groups: Under 20, 20-29, 30-39, 40-49, 50 and above
-5. Perform time-series and cumulative analyses:
-   - Yearly and monthly sales
-   - Running totals and moving averages
-   - Year-over-year comparisons
-6. Identify contributions of categories and products to overall sales.
+The reporting layer consumes curated Gold-layer warehouse views and produces **actionable insights** for decision-making.
 
 ---
 
-## 📝 Highlights of the SQL Scripts
+## 🎯 Key Objectives
 
-- **Product Report (`product_report.sql`)**
-  - Aggregates product sales metrics.
-  - Computes lifespan, recency, average revenue, and monthly revenue.
-  - Segments products based on revenue.
+### ✔ Product-Level Analytics
 
-- **Customer Report (`customer_report.sql`)**
-  - Aggregates customer transactions.
-  - Segments customers into Important, Regular, and New based on spending and history.
-  - Calculates age groups, recency, average order value, and average monthly spending.
+* total orders, sales, quantity, customers
+* lifespan & recency
+* average order revenue
+* average monthly revenue
+* revenue-based segmentation
+* cost-range segmentation
 
-- **Segmentation (`segmentation.sql`)**
-  - Cost-based segmentation of products.
-  - Customer segmentation based on total spending and history.
+### ✔ Customer-Level Analytics
 
-- **Time Analysis (`time_analysis.sql`)**
-  - Yearly and monthly aggregation of sales.
-  - Cumulative analysis using window functions.
-  - Part-to-whole analysis for categories and products.
+* total sales, orders, quantity, products interacted with
+* lifespan & recency
+* spending-based segmentation:
 
-- **Views (`views.sql`)**
-  - Scripts for creating/updating reusable views like `product_report` and `report_customers`.
+  * New
+  * Regular
+  * Important
+* age-band grouping
+
+### ✔ Time-Series & Cumulative Analysis
+
+* yearly & monthly trends
+* running totals
+* moving averages
+* YoY comparisons
+
+### ✔ Part-to-Whole Contribution
+
+* category contribution
+* product-line contribution
 
 ---
 
-## ⚡ Future Work
+## 📝 Highlights of the SQL Layer
 
-- Develop **Power BI reports** for interactive dashboards based on the above SQL outputs.
-- Connect SQL views directly to Power BI for **live data visualization**.
+### 🧾 Product Report (`product_report.sql`)
+
+* aggregates product-level metrics
+* computes lifespan, recency, avg revenue
+* derives monthly revenue signals
+* classifies products by performance
 
 ---
 
-## 📊 Technologies Used
+### 🧾 Customer Report (`customer_report.sql`)
 
-- SQL Server / T-SQL
-- Window functions and CTEs
-- Data Warehousing (Bronze/Silver/Gold layers)
-- Aggregation, segmentation, and reporting
+* aggregates customer transaction metrics
+* builds spend-based segmentation
+* calculates AOV & recency
+* assigns age group distribution
+
+---
+
+### 🧾 Segmentation (`segmentation.sql`)
+
+* revenue-tiered product segmentation
+* cost-bucket classification
+* behavioral customer segmentation
+
+---
+
+### 🧾 Time Analysis (`time_analysis.sql`)
+
+* yearly & monthly aggregations
+* cumulative window functions
+* contribution breakdowns
+
+---
+
+### 🧾 Reusable Analytics Views (`views.sql`)
+
+Creates warehouse-ready Gold views such as:
+
+* `gold.product_report`
+* `gold.report_customers`
+
+These views serve as the **semantic layer for BI tools**.
+
+---
+
+# 📊 Power BI Reporting & Dashboard Layer
+
+Power BI connects directly to the curated Gold views:
+
+* `gold.fact_sales`
+* `gold.dim_products`
+* `gold.dim_customers`
+* `gold.product_report`
+* `gold.report_customers`
+
+This enables:
+
+* live query connectivity
+* reusable metric definitions
+* dimensional drill-down across customer, product & time
+
+---
+
+## 🧭 Index / Navigation Page
+
+Serves as the entry point into the analytics experience and routes users to each dashboard module.
+
+📸 Screenshot
+`![Index Page](powerbi/screenshots/index_page.png)`
+
+---
+
+## 📈 KPI & Summary Dashboard
+
+High-level executive reporting:
+
+* Total Sales
+* Number of Customers
+* Total Quantity
+* Top-10 Best Selling Products
+* Sales by Category
+* Sales vs Quantity (trend over time)
+* Gender-wise sales contribution
+
+📸 Screenshot
+`![KPI Dashboard](powerbi/screenshots/kpi_dashboard.png)`
+
+---
+
+## 🧑‍🤝‍🧑 Customer Insight Dashboard
+
+Focuses on demographic, behavioral & spending analytics:
+
+* Customers by Age Group
+* Average Order Value by Age Group
+* Sales contribution by Age Group
+* Gender-based customer distribution
+* Country-wise customer distribution (map)
+
+📸 Screenshot
+`![Customer Insights](powerbi/screenshots/customer_insights.png)`
+
+---
+
+## 🏷️ Product Performance Dashboard
+
+Designed for portfolio & category analysis:
+
+* Sales by Product Line
+* Product Category Contribution (treemap)
+* Top Product Lines by Quantity Sold
+* Maintenance Cost vs Sales (scatter plot)
+
+Helps identify:
+
+* high-volume vs high-revenue products
+* underperforming segments
+* cost-to-revenue relationships
+
+📸 Screenshot
+`![Product Performance](powerbi/screenshots/product_performance.png)`
+
+---
+
+## 🚚 Sales Operations & Order Insights
+
+Covers operational performance & order trends:
+
+* Orders over Time
+* Shipping Performance Trend
+* Sales vs Price vs Quantity (bubble scatter)
+* Interactive slicers for:
+
+  * date range
+  * product category
+  * product line
+
+📸 Screenshot
+`![Sales Operations](powerbi/screenshots/sales_operations.png)`
+
+---
+
+## 🧠 Insights Enabled
+
+The platform helps answer:
+
+* Which product lines generate the most revenue?
+* Which age segments spend the most?
+* How do order volumes trend across years?
+* Which regions contain most customers?
+* How does price relate to quantity & sales?
+* Which categories dominate contribution share?
+* Which product lines need optimization focus?
+
+---
+
+## 🔮 Planned Enhancements
+
+* Product & Customer drill-through navigation
+* Bookmark-based storytelling dashboards
+* Deployment to Power BI Service
+* Scheduled data refresh
+* Role-based Row-Level Security
+
+---
+
+## 🛠️ Technologies Used
+
+* SQL Server / T-SQL
+* Window Functions & CTEs
+* Data Warehouse Layering (Bronze → Silver → Gold)
+* Segmentation & Aggregation pipelines
+* Power BI (Analytics & Visualization)
 
 ---
 
 ## 📌 Notes
 
-- All scripts are written to be **idempotent** wherever possible (using `CREATE OR ALTER VIEW`).
-- SQL scripts assume the database context is `data_warehouse`.
-- Power BI folder is currently empty but will contain dashboards connecting to these SQL views.
+* SQL scripts follow idempotent patterns (`CREATE OR ALTER`)
+* Database context:
+
+  ```
+  data_warehouse
+  ```
+* Power BI connects to SQL views rather than raw tables
 
 ---
 
 ## 📄 License
 
-This repository is licensed under the [MIT License](LICENSE).
+This project is licensed under the **MIT License**.
+
